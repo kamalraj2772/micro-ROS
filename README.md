@@ -1,4 +1,5 @@
 ROS 2 + micro-ROS:
+
 Jetson Orin Nano, ZED2i, and ESP32 Integration
 
 This repository documents my work integrating ROS 2 with micro-ROS, connecting a Jetson Orin Nano, a ZED2i stereo camera, and multiple ESP32 microcontrollers to build a distributed robotic system. The setup enables real-time data publishing and subscribing between edge AI devices and embedded systems.
@@ -21,33 +22,22 @@ Use a second ESP32 node to control motors (e.g., Neo V1.1 with encoders) based o
 ---------------------------------------
 
 System Architecture;
-
 Jetson Orin Nano
-
 ROS 2 Humble
-
 Custom node (zed2i_publish) reads data from ZED2i and publishes:
-
 angle (float)
-
 velocity (float)
 
 Topics:
-
 /zed2i/angle
-
 /zed2i/velocity
-
 ESP32 (micro-ROS client)
 micro-ROS Arduino library
 
 Subscribes to:
-
 /zed2i/angle → Controls motor to desired angle
-
 /zed2i/velocity → For motion profiling
 
 
 Displays values on:
-
 16x2 LCD via I2C
